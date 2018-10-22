@@ -1,0 +1,82 @@
+
+
+<div id="set">
+  div1
+</div>
+
+<div id="raf">
+  div2
+</div>
+
+
+<style>
+
+  #set {
+    position: absolute;
+    padding: 20px;
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    border: 3px solid red;
+  }
+
+  #raf {
+    top: 200px;
+    position: absolute;
+    padding: 20px;
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    border: 3px solid red;
+  }
+
+</style>
+
+ <script>
+
+
+   const set = document.getElementById('set');
+   const raf = document.getElementById('raf');
+
+
+   let setLeft = 10;
+   let s = 1;
+   let rafLeft = 10;
+   let r = 1;
+
+   const moveByOne = (name) => {
+    if (name === 'set') {
+      setLeft += 1 * s;
+      set.style.left = `${setLeft}px`;
+
+      if (setLeft > 600) {
+        s *= -1;
+      }
+
+      if (setLeft < 0) {
+        s *= -1;
+      }
+
+      setTimeout(() => moveByOne('set'), 0);
+
+    } else {
+      rafLeft += 1 * r;
+      raf.style.left = `${rafLeft}px`;
+
+      if (rafLeft > 600) {
+        r *= -1;
+      }
+      if (rafLeft < 0) {
+        r *= -1;
+      }
+
+      requestAnimationFrame(() => moveByOne('raf'));
+    }
+   }
+
+
+   moveByOne('set');
+   moveByOne('raf');
+
+
+ </script>
