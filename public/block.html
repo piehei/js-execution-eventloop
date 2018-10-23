@@ -1,0 +1,33 @@
+
+
+<img src="giphy.gif">
+
+
+<button id="butt">?</button>
+
+<style>
+
+</style>
+
+ <script>
+
+    let looping = false;
+
+    function loop() {
+      if (looping) {
+        Promise.resolve().then(loop)
+      }
+    }
+
+    const butt = document.getElementById('butt');
+
+    butt.addEventListener('click', () => {
+      if (!looping) {
+        looping = true;
+        loop();
+      } else {
+        looping = false;
+      }
+    })
+
+ </script>
