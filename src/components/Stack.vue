@@ -23,6 +23,7 @@
     </div>
 
 
+    <h2 class="paint">Paint</h2>
 
     <div id="timers">
       <h2>timers & async</h2>
@@ -384,6 +385,16 @@ export default Vue.extend({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+
+.paint {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  justify-self: start;
+  margin-left: 20px;
+}
 
 button {
   padding: 10px;
